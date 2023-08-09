@@ -9,11 +9,14 @@ import {
   faLanguage,
   faAssistiveListeningSystems,
   faStore,
-  faFilm
+  faFilm,
+  faCartPlus,
+  faComments
   
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faSearchengin
+  faSearchengin,
+  faGalacticRepublic
 } from "@fortawesome/free-brands-svg-icons";
 const projectsJson = [
   {
@@ -48,6 +51,28 @@ const projectsJson = [
     link: "https://github.com/phatjkk/DragonOCR",
     detail:
       "An Windows application to convert Image-to-Text using OCR",
+  },
+  {
+    name: "TarotGame",
+    icon: faGalacticRepublic,
+    link: "https://github.com/phatjkk/tarot-vietnamese-project",
+    detail:
+      "Website bói bài Tarot (Việt Hoá)",
+  },
+  {
+    name: "ErialShop",
+    icon: faCartPlus,
+    link: "https://erialshop.com/",
+    detail:
+      "Website bán hàng trang sức thủ công (Wordpress)",
+  }
+  ,
+  {
+    name: "LoraChatbot",
+    icon: faComments,
+    link: "https://github.com/protonx-tf-06-projects/lora-experiment-1",
+    detail:
+      "Finetuning LLM for Question-Answering tasks (Vietnamese-English)",
   }
 ];
 function Project() {

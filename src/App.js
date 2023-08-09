@@ -30,7 +30,7 @@ function App() {
         {/* profile */}
         <ProfileUI />
         {/* main view */}
-        <div className="mt-5 mx-auto h-[90%] lg:w-[67%] md:w-[90%]  p-3 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30">
+        <div className="mt-5 mx-auto h-[90%] md:w-[67%] sm:w-[90%]  p-3 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30">
           {/* menu */}
           {/*absolute z-20 right-0 */}
           <div className="flex justify-center z-20 top-5 mb-2 sm:absolute sm:right-0 sm:top-2">
@@ -61,7 +61,7 @@ function App() {
                 {/* <Marquee text="Cứ chill thôi - Chilles" className="hidden group-hover:block"/> */}
                 </div>
               )}
-              <Marquee className="" gradient={false}>| Cứ chill thôi - Chilles |</Marquee>
+              <Marquee className="" gradient={false}>| Cứ chill thôi - Chillies ft Suni Hạ Linh |</Marquee>
             </button>
           </div>
           <div className="text-white font-mono">

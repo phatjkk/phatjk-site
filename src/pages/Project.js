@@ -1,7 +1,6 @@
-
 import Tippy from "@tippyjs/react";
 import "slick-carousel/slick/slick.css";
-
+import { useState } from "react";
 import "tippy.js/dist/tippy.css"; // optional
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,12 +10,14 @@ import {
   faStore,
   faFilm,
   faCartPlus,
-  faComments
-  
+  faComments,
+  faRobot,
+  faHeadphones,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faSearchengin,
-  faGalacticRepublic
+  faGalacticRepublic,
 } from "@fortawesome/free-brands-svg-icons";
 const projectsJson = [
   {
@@ -36,7 +37,8 @@ const projectsJson = [
     name: "CozaStore",
     icon: faStore,
     link: "https://github.com/phatjkk/coza-store-e-commerce",
-    detail: "An e-commerce website built with Microsoft ASP.NET MVC (Momo Payment)",
+    detail:
+      "An e-commerce website built with Microsoft ASP.NET MVC (Momo Payment)",
   },
   {
     name: "MoviesSite",
@@ -49,45 +51,78 @@ const projectsJson = [
     name: "DragonOCR",
     icon: faSearchengin,
     link: "https://github.com/phatjkk/DragonOCR",
-    detail:
-      "An Windows application to convert Image-to-Text using OCR",
+    detail: "An Windows application to convert Image-to-Text using OCR",
   },
   {
     name: "TarotGame",
     icon: faGalacticRepublic,
     link: "https://github.com/phatjkk/tarot-vietnamese-project",
-    detail:
-      "Website bói bài Tarot (Việt Hoá)",
+    detail: "Website bói bài Tarot (Việt Hoá)",
   },
   {
     name: "ErialShop",
     icon: faCartPlus,
     link: "https://erialshop.com/",
-    detail:
-      "Website bán hàng trang sức thủ công (Wordpress)",
-  }
-  ,
+    detail: "Website bán hàng trang sức thủ công (Wordpress)",
+  },
   {
     name: "LoraChatbot",
     icon: faComments,
     link: "https://github.com/protonx-tf-06-projects/lora-experiment-1",
+    detail: "Finetuning LLM for Question-Answering tasks (Vietnamese-English)",
+  },
+  {
+    name: "NTTU_Chatbot",
+    icon: faRobot,
+    link: "https://www.youtube.com/watch?v=lpYw6K844XY",
+    detail: "RAG for Question-Answering based on documents (Vietnamese)",
+  },
+  {
+    name: "VITS_TTS Vietnamese",
+    icon: faHeadphones,
+    link: "https://www.youtube.com/watch?v=1mAhaP26aQE",
     detail:
-      "Finetuning LLM for Question-Answering tasks (Vietnamese-English)",
-  }
+      "Text to Speak in Vietnamese with VITS model bulid with Tornado and deploy on Docker",
+  },
+  {
+    name: "VITS_TTS Multilingual",
+    icon: faGlobe,
+    link: "https://phatjkk.github.io/tts",
+    detail:
+      "Text to Speak in Multi-language with VITS model run on browser (Transformer.js + ReactJS)",
+  },
 ];
+
 function Project() {
+  const [isNextPage, ChangeNextPage] = useState(false);
   return (
-    <div className="max-w-screen-lg mx-auto p-4">
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-4 mt-12">
-        {projectsJson.map((project, i) => (
+    <div className="max-w-screen-lg mx-auto p-2">
+      <div className="mb-2 flex justify-center content-center">
+        {window.innerWidth >= 768 && (
+          <button
+            onClick={() => ChangeNextPage(!isNextPage)}
+            className=" mr-2 mt-5 w-[25%] text-white bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30 hover:bg-opacity-20"
+          >
+            {isNextPage ? "<< Previos page" : "Next page >>"}
+          </button>
+        )}
+      </div>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-4 mt-5">
+        {(window.innerWidth < 768
+          ? projectsJson
+          : isNextPage
+          ? projectsJson.slice(8, 16)
+          : projectsJson.slice(0, 8)
+        ).map((project, i) => (
           <Tippy
             content={project.detail}
             placement="bottom"
             interactive={true}
             animation="fade"
-            interactiveBorder={20}
+            // interactiveBorder={20}
             inertia={true}
-            delay={50}
+            disabled={window.innerWidth < 768}
+            delay={0}
           >
             <button
               key={i}
@@ -96,6 +131,7 @@ function Project() {
             >
               <FontAwesomeIcon className="text-5xl" icon={project.icon} />
               <h3 className="mt-2 text-sm font-semibold">{project.name}</h3>
+              {window.innerWidth < 768 && <p className="text-xs">{project.detail}</p>}
             </button>
           </Tippy>
         ))}

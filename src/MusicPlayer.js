@@ -1,4 +1,4 @@
-import bai1 from "./music/1.mp3"
+import bai1 from "./music/2.mp3"
 function MusicPlayer() {
   return (
     <div>

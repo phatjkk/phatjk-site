@@ -14,7 +14,7 @@ const information = {
 };
 function ProfileUI() {
   return (
-    <div className="mt-3 ml-[5%] md:ml-5 md:mt-5 h-[90%] w-[90%] lg:w-[25%] sm:w-[90%]  p-3 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30">
+    <div className="mt-3 ml-[5%] md:ml-5 md:mt-5 h-[93%] w-[90%] lg:w-[25%] sm:w-[90%]  p-3 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30">
       <div className="rounded-full bg-[url('/avatar.jpg')] mx-auto  md:h-[10em] md:w-[10em] h-[5em] w-[5em] bg-cover"></div>
       <h2 className="text-white mt-4 font-mono font-semibold text-xl text-center">
         Nguyen Thanh Phat

@@ -4,10 +4,10 @@ function Home() {
       <div className="mt-5 ">
         Hi! Welcome to my website, my name is Nguyễn Thành Phát. A typical Asian man, who has experience in developing websites and applications. Have knowledge about data
         processing/analytics and do some of Machine/Deep Learning tasks. 
-        Let's see my products in Project Tab. Give me a star if it helpful to you. 
+        Give me a star on Github if my project helpful to you. 
         Have a great day ;)
       </div>
-      <div className="bg-[url('/have_a_nice.gif')] mt-2 rounded-lg mx-auto bg-cover h-[10em] w-[10em]">
+      <div className="bg-[url('/toothless.gif')] mt-2 rounded-lg mx-auto bg-cover h-[10em] w-[10em]">
       </div>
         <div class="flex w-full justify-center">
           <button onClick={() => window.open("https://github.com/phatjkk/phatjkk.github.io/blob/master/CV_NguyenThanhPhat_noPhone.pdf", "_blank").focus()} class=" mt-2 p-1 w-[10em]  text-white bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 border-opacity-30 hover:bg-opacity-20">
